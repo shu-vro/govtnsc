@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 3.9%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 3.9%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 3.9%;
+
+        --primary: 0 0% 9%;
+        --primary-foreground: 0 0% 98%;
+
+        --secondary: 0 0% 96.1%;
+        --secondary-foreground: 0 0% 9%;
+
+        --muted: 0 0% 96.1%;
+        --muted-foreground: 0 0% 45.1%;
+
+        --accent: 0 0% 96.1%;
+        --accent-foreground: 0 0% 9%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 0 0% 3.9%;
+
+        --radius: 0.5rem;
+    }
+
+    .dark {
+        --background: 0 0% 3.9%;
+        --foreground: 0 0% 98%;
+
+        --card: 0 0% 3.9%;
+        --card-foreground: 0 0% 98%;
+
+        --popover: 0 0% 3.9%;
+        --popover-foreground: 0 0% 98%;
+
+        --primary: 0 0% 98%;
+        --primary-foreground: 0 0% 9%;
+
+        --secondary: 0 0% 14.9%;
+        --secondary-foreground: 0 0% 98%;
+
+        --muted: 0 0% 14.9%;
+        --muted-foreground: 0 0% 63.9%;
+
+        --accent: 0 0% 14.9%;
+        --accent-foreground: 0 0% 98%;
+
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 98%;
+
+        --border: 0 0% 14.9%;
+        --input: 0 0% 14.9%;
+        --ring: 0 0% 83.1%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    .hover-card-wrapper .hover-card::after {
+        opacity: 0;
+    }
+    .hover-card-wrapper:hover .hover-card::after {
+        opacity: 1;
+    }
+    .hover-card {
+        @apply relative p-[1px] hover:before:opacity-100 before:z-[4] after:z-[2] w-full;
+    }
+    .hover-card .hover-card-content {
+        @apply bg-[color:#e7e7e7] dark:bg-[color:#262626] relative z-[3] rounded-[inherit];
+    }
+    .hover-card::before,
+    .hover-card::after {
+        @apply content-[""] h-full opacity-0 absolute transition-opacity duration-500 w-full pointer-events-none rounded-[inherit] left-0 top-0;
+    }
+    .dark .hover-card::before {
+        background: radial-gradient(
+            600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.1),
+            transparent 40%
+        );
+    }
+    .dark .hover-card::after {
+        background: radial-gradient(
+            500px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.8),
+            transparent 40%
+        );
+    }
+    .hover-card::before {
+        background: radial-gradient(
+            600px circle at var(--mouse-x) var(--mouse-y),
+            rgba(0, 0, 0, 0.06),
+            transparent 40%
+        );
+    }
+    .hover-card::after {
+        @apply opacity-100;
+        background: radial-gradient(
+            500px circle at var(--mouse-x) var(--mouse-y),
+            rgba(0, 0, 0, 0.8),
+            transparent 40%
+        );
+    }
+
+    .fillCardWrapper {
+        @apply relative p-[1px] hover:before:opacity-100 overflow-hidden rounded-3xl text-white;
+    }
+
+    .fillCardWrapper::before {
+        left: var(--mouse-x);
+        top: var(--mouse-y);
+        @apply content-[""] absolute w-0 h-0 rounded-full;
+        transition: width 0.5s ease, height 0.5s ease;
+        transform: translate(-50%, -50%);
+        animation: hue-rotate 5s linear infinite;
+        background-color: #ff0000;
+    }
+
+    .fillCardWrapper:hover::before {
+        @apply w-[var(--size)] h-[var(--size)];
+    }
+}
+
+@keyframes hue-rotate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* @layer utilities {
+    
+} */
+
+.layout-grid {
+    grid-template-areas:
+        "notice     notice      notice      notice      principal"
+        "teachers   teachers    students    students    principal"
+        "location   location    location    location    links";
+}
+
+@media (max-width: 1168px) {
+    .layout-grid {
+        grid-template-areas:
+            "notice     notice      notice   notice      notice     notice"
+            "teachers   teachers    students students    principal  principal"
+            "links      links       students students    principal  principal"
+            "location   location    location location    location   location";
+    }
+}
+
+@media (max-width: 990px) {
+    .layout-grid {
+        grid-template-areas:
+            "notice notice notice notice notice notice"
+            "teachers teachers teachers principal principal principal"
+            "students students students principal principal principal"
+            "students students students links links links"
+            "location location location location location location";
+    }
+}
+@media (max-width: 658px) {
+    .layout-grid {
+        grid-template-areas:
+            "notice"
+            "principal"
+            "teachers"
+            "students"
+            "links"
+            "location";
+    }
+}
