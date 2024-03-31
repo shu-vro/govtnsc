@@ -1,6 +1,6 @@
 import React from "react";
 import { Image } from "@nextui-org/react";
-import { principle_speech_json } from "@/lib/constants";
+import { college_name, principle_speech_json } from "@/lib/constants";
 
 export default function PrincipleSpeech() {
     return (
@@ -12,7 +12,7 @@ export default function PrincipleSpeech() {
                 width={400}
             />
             <h2 className="text-3xl">{principle_speech_json.name}</h2>
-            <small>অধ্যক্ষ, সরকারি নাজমুল স্মৃতি মহাবিদ্যালয়</small>
+            <small>অধ্যক্ষ, {college_name}</small>
             <p className="text-xl mt-4">{principle_speech_json.message}</p>
         </div>
     );

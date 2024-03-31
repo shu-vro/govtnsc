@@ -158,14 +158,16 @@ html {
 
 .layout-grid {
     grid-template-areas:
-        "notice     notice      notice      notice      principal"
-        "teachers   teachers    students    students    principal"
-        "location   location    location    location    links";
+        "history history history history history"
+        "notice notice notice notice principal"
+        "teachers teachers students students principal"
+        "location location location location links";
 }
 
 @media (max-width: 1168px) {
     .layout-grid {
         grid-template-areas:
+            "history    history     history  history     history    history"
             "notice     notice      notice   notice      notice     notice"
             "teachers   teachers    students students    principal  principal"
             "links      links       students students    principal  principal"
@@ -176,16 +178,18 @@ html {
 @media (max-width: 990px) {
     .layout-grid {
         grid-template-areas:
-            "notice notice notice notice notice notice"
-            "teachers teachers teachers principal principal principal"
-            "students students students principal principal principal"
-            "students students students links links links"
-            "location location location location location location";
+            "history history"
+            "notice notice"
+            "teachers  principal"
+            "students principal"
+            "students links"
+            "location location";
     }
 }
 @media (max-width: 658px) {
     .layout-grid {
         grid-template-areas:
+            "history"
             "notice"
             "principal"
             "teachers"

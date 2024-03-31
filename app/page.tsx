@@ -5,10 +5,12 @@ import TeachersLink from "./TeachersLink";
 import StudentsLink from "./StudentsLink";
 import LocationTab from "./LocationTab";
 import ImportantLinks from "./ImportantLinks";
+import History from "./History";
 
 export default function Home() {
     return (
         <div className="grid justify-stretch items-start gap-4 layout-grid">
+            <History />
             <NoticePanel />
             <PrincipleComment {...principle_speech_json} />
             <TeachersLink />

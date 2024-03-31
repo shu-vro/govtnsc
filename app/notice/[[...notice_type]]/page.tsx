@@ -1,13 +1,5 @@
-import { Button, Pagination } from "@nextui-org/react";
-import {
-    TableHead,
-    TableRow,
-    TableHeader,
-    TableCell,
-    TableBody,
-    Table,
-} from "@/components/ui/table";
-import Link from "next/link";
+import { TableHead, TableRow, TableHeader, Table } from "@/components/ui/table";
+import { Input } from "@nextui-org/react";
 import { NoticeType } from "@/lib/constants";
 import SelectedPageContext from "./SelectedPageContext";
 import NoticeBody from "./NoticeBody";
@@ -28,8 +20,9 @@ export default function Notice_Page({
                     )}
                 </h1>
             </div>
-            <div className="border border-foreground-300 rounded-lg shadow overflow-hidden">
-                <SelectedPageContext>
+            <SelectedPageContext>
+                <Input type="search" label="Search" />
+                <div className="border border-foreground-300 rounded-lg shadow overflow-hidden">
                     <Table>
                         <TableHeader>
                             <TableRow>
@@ -47,13 +40,13 @@ export default function Notice_Page({
                     </Table>
 
                     <Paginate />
-                </SelectedPageContext>
-            </div>
+                </div>
+            </SelectedPageContext>
         </div>
     );
 }
 
-export const noticeCells = [
+export const allNotice = [
     {
         index: 1,
         name: "New Features Added",
@@ -206,3 +199,5 @@ export const noticeCells = [
         link: "#",
     },
 ];
+
+export const noticeCells = allNotice;

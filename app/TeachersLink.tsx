@@ -1,17 +1,17 @@
 import React from "react";
 import teacher_bg from "@/assets/teacher.png";
 import { Card, CardBody, CardHeader, Image } from "@nextui-org/react";
-import Link, { LinkProps } from "next/link";
 import { LinkComponent } from "./StudentsLink";
-import FillCardWrapper from "@/components/FillCardWrapper";
+import HoverWrapper from "@/components/HoverWrapper";
+// import FillCardWrapper from "@/components/FillCardWrapper";
 
 export default function TeachersLink() {
     return (
-        <FillCardWrapper
+        <HoverWrapper
             style={{
                 gridArea: "teachers",
             }}>
-            <Card className="rounded-3xl">
+            <Card className="rounded-3xl  bg-background">
                 <CardHeader className="flex-col items-center">
                     <Image
                         alt="Card background"
@@ -40,6 +40,6 @@ export default function TeachersLink() {
                     </ul>
                 </CardBody>
             </Card>
-        </FillCardWrapper>
+        </HoverWrapper>
     );
 }
