@@ -3,11 +3,12 @@ import React from "react";
 import logo from "@/assets/logo.png";
 import NavigationLinks from "./NavigationLinks";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
     return (
         <Navbar shouldHideOnScroll maxWidth="xl">
-            <NavbarContent justify="start">
+            <NavbarContent justify="start" as={Link} href={"/"}>
                 <NavbarBrand>
                     <Image
                         src={logo}

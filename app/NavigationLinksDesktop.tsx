@@ -84,7 +84,7 @@ export default function NavigationLinksDesktop() {
                         <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] items-start">
                             <li className="row-span-3">
                                 <NavigationMenuLink asChild>
-                                    <a
+                                    <Link
                                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                                         href={notice_links[0].href}>
                                         <Image
@@ -100,7 +100,7 @@ export default function NavigationLinksDesktop() {
                                             downloads, instructions can be found
                                             here.
                                         </p>
-                                    </a>
+                                    </Link>
                                 </NavigationMenuLink>
                             </li>
                             {notice_links.map((link, i) => (
@@ -122,7 +122,7 @@ export default function NavigationLinksDesktop() {
                         <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] items-start">
                             <li className="row-span-3">
                                 <NavigationMenuLink asChild>
-                                    <a
+                                    <Link
                                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                                         href={result_links[0].href}>
                                         <Image
@@ -140,7 +140,7 @@ export default function NavigationLinksDesktop() {
                                             remarkable achievement in academic
                                             excellence.
                                         </p>
-                                    </a>
+                                    </Link>
                                 </NavigationMenuLink>
                             </li>
                             {result_links.map((link, i) => (
@@ -189,12 +189,13 @@ export default function NavigationLinksDesktop() {
 const ListItem = React.forwardRef<
     React.ElementRef<"a">,
     React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, href, children, ...props }, ref) => {
     return (
         <div>
             <NavigationMenuLink asChild>
-                <a
+                <Link
                     ref={ref}
+                    href={href!}
                     className={cn(
                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                         className
@@ -206,7 +207,7 @@ const ListItem = React.forwardRef<
                     <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                         {children}
                     </p>
-                </a>
+                </Link>
             </NavigationMenuLink>
         </div>
     );

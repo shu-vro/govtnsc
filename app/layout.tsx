@@ -28,11 +28,13 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange>
                     <ConfigComponent />
-                    <Header />
-                    <div className="max-w-screen-lg mx-auto xl:max-w-screen-xl">
-                        {children}
+                    <div className=" flex flex-col min-h-screen">
+                        <Header />
+                        <div className="max-w-screen-lg mx-auto xl:max-w-screen-xl flex-[1]">
+                            {children}
+                        </div>
+                        <Footer />
                     </div>
-                    <Footer />
                 </ThemeProvider>
             </body>
         </html>

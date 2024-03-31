@@ -22,7 +22,7 @@ export default function TeachersLink() {
                 </CardHeader>
                 <CardBody className="overflow-visible py-4 px-6">
                     <ul className="list-disc ml-6">
-                        <LinkComponent href={"/শিক্ষকগণের-নামের-তালিকা"}>
+                        <LinkComponent href={"/teachers-list"}>
                             শিক্ষকগণের নামের তালিকা
                         </LinkComponent>
                         <LinkComponent
