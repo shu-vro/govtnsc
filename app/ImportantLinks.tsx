@@ -42,8 +42,8 @@ export default function ImportantLinks() {
                     </AccordionItem>
                     <AccordionItem
                         key="2"
-                        aria-label="Accordion 2"
-                        title="Accordion 2">
+                        aria-label="গুরুত্বপূর্ণ লিংক"
+                        title="গুরুত্বপূর্ণ লিংক">
                         <ul className="list-disc list-inside">
                             <ListBoxField
                                 title="a2i (Access to Information)"

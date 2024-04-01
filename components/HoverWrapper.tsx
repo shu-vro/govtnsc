@@ -18,12 +18,7 @@ export default function HoverWrapper({
         <div
             className={cn("hover-card", "rounded-3xl", className)}
             style={style}>
-            <div
-                className={cn(
-                    "hover-card-content",
-                    "bg-[color:#e7e7e7] dark:bg-[color:#262626]",
-                    classNameInner
-                )}>
+            <div className={cn("hover-card-content", classNameInner)}>
                 {children}
             </div>
         </div>

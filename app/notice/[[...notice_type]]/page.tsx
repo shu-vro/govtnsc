@@ -11,7 +11,7 @@ export default function Notice_Page({
     params: { notice_type: NoticeType };
 }) {
     return (
-        <div className="flex flex-col gap-4 min-h-1/2 my-6">
+        <div className="flex flex-col gap-4 min-h-1/2 my-6 w-full">
             <div className="flex items-center gap-4">
                 <h1 className="text-2xl font-bold">
                     Notice:{" "}

@@ -108,4 +108,5 @@ export const college_history_json = {
 };
 
 export const NUMBER_OF_ROWS = 10;
+export const NUMBER_OF_TEACHER_TILES = 12;
 export const college_name = "সরকারি নাজমুল স্মৃতি মহাবিদ্যালয়";
